@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<title>Search on Youtube - find a video on Youtube</title>
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="main.css">
+
+	<!-- Enter jQuery -->
+	<script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous">
+  </script>
+
+</head>
+<body>
+
+	<header>
+		<h1>Find a Youtube video</h1>
+	</header>
+
+	<main>
+		<form>
+			<fieldset>
+				<legend>Enter your search terms</legend>
+				<input id="js-query" type="text" name="query" placeholder="Type your query here..." required>
+				<button id="js-submitQuery" type="submit">Search</button>
+			</fieldset>
+		</form>
+
+		<section class="results js-results hidden">
+			<h2>Results</h2>
+		</section>
+	</main>
+
+	<footer>&copy; 2018 PP Search Forms</footer>
+
+</body>
+</html>
