@@ -58,7 +58,7 @@ html {
 
 body {
 	line-height: 1.5;
-	font-family: sans-serif;
+	font-family: Montserrat, Arial, sans-serif;
 	background-color: white;
 	width: 80%;
 	margin-right: auto;
@@ -77,6 +77,7 @@ h1 {
 	font-size: 2.4rem;
 	padding-left: 10px;
 	padding-right: 10px;
+	letter-spacing: 1px;
 }
 
 h2 {
@@ -85,7 +86,7 @@ h2 {
 
 h1, h2, legend {
 	text-align: center;
-	font-weight: bold;
+	font-weight: 900;
 }
 
 input, button {
@@ -101,6 +102,7 @@ input {
 }
 
 form, fieldset, legend, input, button {
+	font-family: Montserrat, Arial, sans-serif;
 	margin-right: auto;
 	margin-left: auto;
 	font-size: 1.0rem;
@@ -110,7 +112,7 @@ button {
 	text-transform: uppercase;
 	width: 90%;
 	color: white;
-	font-weight: bold;
+	font-weight: 600;
 	background-color: black;
 	border: 1px solid black;
 }
@@ -149,5 +151,32 @@ footer {
 @media screen and (min-width: 640px) {
 	header {
 		height: 200px;
+	}
+	body {
+		width: 80%;
+	}
+}
+
+@media screen and (min-width: 980px) {
+	body {
+		width: 60%;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	body {
+		width: 50%;
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	body {
+		width: 40%;
+	}
+}
+
+@media screen and (min-width: 2400px) {
+	body {
+		width: 30%;
 	}
 }
