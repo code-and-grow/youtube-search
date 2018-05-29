@@ -21,15 +21,16 @@
 <body>
 
 	<header>
-		<h1>Find a Youtube video</h1>
+		<h1>Search for Youtube videos</h1>
 	</header>
 
 	<main>
-		<form>
+		<form id="js-search-form" action="#">
 			<fieldset>
 				<legend>Enter your search terms</legend>
+				<label for="query"></label>
 				<input id="js-query" type="text" name="query" placeholder="Type your query here..." required>
-				<button id="js-submitQuery" type="submit">Search</button>
+				<button id="js-submit-query" type="submit">Search</button>
 			</fieldset>
 		</form>
 
@@ -39,6 +40,8 @@
 	</main>
 
 	<footer>&copy; 2018 PP Search Forms</footer>
+
+	<script src="search.js"></script>
 
 </body>
 </html>

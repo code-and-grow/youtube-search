@@ -60,6 +60,9 @@ body {
 	line-height: 1.5;
 	font-family: sans-serif;
 	background-color: white;
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 header {
@@ -80,7 +83,7 @@ h2 {
 	font-size: 1.8rem;
 }
 
-h1, h2 {
+h1, h2, legend {
 	text-align: center;
 	font-weight: bold;
 }
@@ -93,7 +96,7 @@ input, button {
 
 input {
 	text-align: center;
-	width: 80%;
+	width: 90%;
 	border: 1px solid grey;
 }
 
@@ -105,27 +108,26 @@ form, fieldset, legend, input, button {
 
 button {
 	text-transform: uppercase;
-	width: 80%;
+	width: 90%;
 	color: white;
+	font-weight: bold;
 	background-color: black;
 	border: 1px solid black;
 }
 
 button:hover {
 	cursor: pointer;
-	font-weight: bold;
 	background-color: red;
 	border: 1px solid grey;
 }
 
 form {
-	width: 80%;
+	width: 90%;
 }
 
 legend {
 	margin-bottom: 10px;
 	text-transform: uppercase;
-	font-weight: bold;
 }
 
 footer {
