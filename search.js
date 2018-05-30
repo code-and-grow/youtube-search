@@ -18,15 +18,12 @@ function getDataFromYtube(searchTerm, callback) {
 }
 
 function renderResult(result) {
-  console.log(result);
   return `
-  <div class="result">
     <a href="https://youtu.be/${result.id.videoId}" target="_blank">
       <h3 class="no-underline">${result.snippet.title}</h3>
       <img src="${result.snippet.thumbnails.high.url}" alt="${result.snippet.description}">
       <p>${result.snippet.description}</p>
     </a>
-  </div>
   `;
 }
 
