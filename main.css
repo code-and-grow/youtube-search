@@ -81,7 +81,7 @@ h1 {
 }
 
 h2 {
-	font-size: 1.8rem;
+	font-size: 1.5rem;
 	margin-bottom: 20px;
 }
 
@@ -212,6 +212,9 @@ p.channel-link {
 	}
 	h1 {
 		padding-top: 80px;
+	}
+	h2 {
+		font-size: 1.8rem;
 	}
 	input {
 		font-size: 1.2rem;
