@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 
-	<title>Search on Youtube - find a video on Youtube</title>
+	<title>Search for videos on Youtube</title>
 
 	<!-- Styles -->
 	<link rel="stylesheet" type="text/css" href="main.css">
@@ -26,23 +26,23 @@
 	</header>
 
 	<main>
-		<form id="js-search-form" action="#">
+		<form id="js-search-form" action="">
 			<fieldset>
 				<legend>Enter your search terms</legend>
-				<label for="search-query"></label>
-				<input id="js-search-query" type="text" name="search-query" placeholder="Type your query here..." required>
-				<button id="js-submit-query" type="submit">Search</button>
+				<label for="search-input"></label>
+				<input id="js-search-input" type="text" name="search-input" placeholder="Type your query here..." required>
+				<button id="js-search-button" type="submit">Search</button>
 			</fieldset>
 		</form>
 
 		<section class="results js-results hidden">
-			<h2>Results</h2>
+			<h2>Top search results:</h2>
 		</section>
 	</main>
 
 	<footer>&copy; 2018 PP Search Forms</footer>
 
 	<script src="search.js"></script>
-
+  <script src="https://apis.google.com/js/client.js" ></script>
 </body>
 </html>

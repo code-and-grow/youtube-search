@@ -1,19 +1,50 @@
-// Youtube essentials
-const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
+const YT_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 const API_KEY = 'AIzaSyD7fadOdlYLbtAoWr8EqYzPpKMJS185u_c';
 
-// Get search terms from user
+function getDataFromYtube(searchTerm, callback) {
+  const settings = {
+    url: YT_SEARCH_URL,
+    data: {
+      part: 'snippet',
+      key: API_KEY,
+      q: searchTerm,
+      order: 'rating',
+      maxResults: 10
+    },
+    success: callback
+  };
 
-// Authorise the request to Youtube
-
-// Get data from Youtube
-
-// Render the results to user
-
-// Search application jQuery callback
-function searchSubmitAction () {
-	console.log("I am ready to search");
+  $.ajax(settings);
 }
 
-// Initialize the search application on page load
-$(searchSubmitAction);
+function renderResult(result) {
+  console.log(result);
+  return `
+  <div class="result">
+    <a href="https://youtu.be/${result.id.videoId}" target="_blank">
+      <h3 class="no-underline">${result.snippet.title}</h3>
+      <img src="${result.snippet.thumbnails.high.url}" alt="${result.snippet.description}">
+      <p>${result.snippet.description}</p>
+    </a>
+  </div>
+  `;
+}
+
+function displayYtubeSearchData(data) {
+  const results = data.items.map((item, index) => renderResult(item));
+  $('.results').html(results);
+  $('.results').removeClass('hidden');
+}
+
+function watchSubmit() {
+  $('#js-search-form').submit(event => {
+    event.preventDefault();
+    const queryTarget = $(event.currentTarget).find('#js-search-input');
+    const query = queryTarget.val();
+    // clear out the input
+    queryTarget.val("");
+    getDataFromYtube(query, displayYtubeSearchData);
+  });
+}
+
+$(watchSubmit);
