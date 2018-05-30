@@ -8,7 +8,7 @@ function getDataFromYtube(searchTerm, callback) {
       part: 'snippet',
       key: API_KEY,
       q: searchTerm,
-      order: 'rating',
+      order: 'viewCount',
       maxResults: 10
     },
     success: callback
