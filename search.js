@@ -29,8 +29,8 @@ function renderResult(result) {
 
 function displayYtubeSearchData(data) {
   const results = data.items.map((item, index) => renderResult(item));
-  $('.result').html(results);
   $('.results').removeClass('hidden');
+  $('.result').html(results);
 }
 
 function watchSubmit() {
