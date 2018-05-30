@@ -129,9 +129,15 @@ form {
 	width: 90%;
 }
 
+fieldset {
+	border: 1px solid grey;
+	padding: 30px;
+}
+
 legend {
-	margin-bottom: 10px;
+	text-align: center;
 	text-transform: uppercase;
+	padding: 10px;
 }
 
 footer {
