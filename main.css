@@ -151,7 +151,6 @@ footer {
 
 .result {
 	margin-bottom: 30px;
-	border-bottom: 2px solid grey;
   text-align: left;
 }
 
@@ -181,6 +180,7 @@ footer {
 	overflow-wrap: break-word;
   text-decoration: inherit;
   padding: 5px 5px 10px;
+  border-bottom: 2px solid grey;
 }
 
 .result img {
