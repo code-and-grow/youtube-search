@@ -83,6 +83,7 @@ h1 {
 h2 {
 	font-size: 1.5rem;
 	margin-bottom: 20px;
+	text-decoration: underline;
 }
 
 h1, h2, legend {
@@ -136,7 +137,7 @@ legend {
 footer {
 	font-size: 0.6rem;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 30px;
   padding-bottom: 10px;
 }
 
@@ -147,6 +148,38 @@ footer {
 	margin-right: auto;
 	margin-left: auto;
 	text-align: center;
+}
+
+.pagination {
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#js-prevPage,
+#js-nextPage {
+	width: 50%;
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	color: black;
+	text-decoration: none;
+	text-align: center;
+	font-size: 0.65rem;
+	font-weight: 600;
+}
+
+#js-prevPage:hover,
+#js-nextPage:hover {
+	color: red;
+}
+
+#js-prevPage {
+	float: left;
+}
+
+#js-nextPage {
+	float: right;
 }
 
 .result {
@@ -163,7 +196,8 @@ footer {
 	color: red;
 }
 
-.result a:hover {
+.result a:hover,
+ {
 	text-decoration: underline;
 	color: red;
 }
@@ -203,6 +237,30 @@ p.channel-link {
 	display: none;
 }
 
+#back-to-top {
+	margin-right: auto;
+	margin-left: auto;
+	width: 29%;
+	display: none;
+	text-align: center;
+	text-decoration: none;
+	color: black;
+	font-weight: 600;
+	font-size: 0.50rem;
+	margin-top: 20px;
+	padding: 10px;
+}
+
+#back-to-top:hover {
+	color: red;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
 @media screen and (min-width: 640px) {
 	header {
 		height: 200px;
@@ -231,15 +289,25 @@ p.channel-link {
 	.results {
 		margin-top: 50px;
 	}
-		.result h3 {
+	.result h3 {
 	  font-size: 1.2rem;
 	}
-
+	#js-prevPage,
+	#js-nextPage {
+		font-size: 1.0rem;
+	}
+	#back-to-top {
+		font-size: 0.85rem;
+		width: 20%;
+	}
 	.result p {
 		font-size: 1.0rem;
 	}
 	p.channel-link {
 		font-size: 0.85rem;
+	}
+	footer {
+		margin-top: 40px;
 	}
 }
 

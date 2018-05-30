@@ -29,10 +29,18 @@
 			</fieldset>
 		</form>
 
-		<section class="results js-results hidden">
+		<section id="results" class="results js-results hidden">
 			<h2>Results filtered by most views:</h2>
 			<div class="result"></div>
 		</section>
+
+		<div class="pagination clearfix">
+			<div id="prevPage"></div>
+			<div id="nextPage"></div>
+		</div>
+		<div>
+			<a id="back-to-top" class="hidden clearfix" href="#">Back to top</a>
+		</div>
 	</main>
 
 	<footer>&copy; 2018 PP Search Forms</footer>
@@ -49,7 +57,7 @@
 
   <!-- Enter Lity -->
   <script src="lity.min.js"></script>
-  
+
 	<script src="search.js"></script>
 
 </body>
