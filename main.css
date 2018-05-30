@@ -180,8 +180,15 @@ footer {
 	overflow-wrap: break-word;
   text-decoration: inherit;
   padding: 5px 5px 10px;
-  border-bottom: 2px solid red;
+}
+
+p.channel-link {
+	border-bottom: 2px solid red;
   margin-bottom: 20px;
+  text-align: right;
+  font-size: 0.55rem;
+  font-style: italic;
+  font-weight: 600;
 }
 
 .result img {
@@ -227,6 +234,9 @@ footer {
 
 	.result p {
 		font-size: 1.0rem;
+	}
+	p.channel-link {
+		font-size: 0.85rem;
 	}
 }
 
