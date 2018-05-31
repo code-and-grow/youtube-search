@@ -147,7 +147,7 @@ legend {
 }
 
 footer {
-	font-size: 0.6rem;
+	font-size: 0.45rem;
   text-align: center;
   margin-top: 30px;
   padding-bottom: 10px;
@@ -299,7 +299,7 @@ p.channel-link {
 	  font-size: 1.3rem;
 	}
 	footer {
-	font-size: 0.75rem;
+	font-size: 0.60rem;
 	}
 	.results {
 		margin-top: 50px;
