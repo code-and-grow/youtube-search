@@ -68,7 +68,7 @@ function pageNav(data) {
   if (nextPage) {
     $('div#nextPage').replaceWith(`<a href="#results" id='js-nextPage' value='Next'>Next page ></a>`);
   }
-  $('#back-to-top').css('display', 'block');
+  $('#navigation').css('display', 'block');
 }
 
 
