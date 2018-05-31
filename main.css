@@ -83,7 +83,12 @@ h1 {
 h2 {
 	font-size: 1.5rem;
 	margin-bottom: 20px;
-	text-decoration: underline;
+}
+
+h2 span {
+	display:  block;
+  font-weight:  400;
+  font-size: 0.45rem;
 }
 
 h1, h2, legend {
@@ -97,17 +102,18 @@ input, button {
 	margin-bottom: 10px;
 }
 
-input {
-	text-align: center;
-	width: 90%;
-	border: 1px solid grey;
-}
-
 form, fieldset, legend, input, button {
 	font-family: Montserrat, Arial, sans-serif;
 	margin-right: auto;
 	margin-left: auto;
 	font-size: 1.0rem;
+}
+
+input {
+	text-align: center;
+	width: 90%;
+	border: 1px solid grey;
+	font-size: 0.67rem;
 }
 
 button {
@@ -279,6 +285,9 @@ p.channel-link {
 	}
 	h2 {
 		font-size: 1.8rem;
+	}
+	h2 span {
+    font-size: 0.6rem;
 	}
 	input {
 		font-size: 1.2rem;
