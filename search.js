@@ -11,8 +11,9 @@ function getDataFromYtube(searchTerm, pageToken, callback) {
       part: 'snippet',
       key: API_KEY,
       q: searchTerm,
-      order: 'viewCount',
-      maxResults: 10,
+      regionCode: 'US',
+      type: 'video',
+      order: 'rating',
       pageToken: pageToken
     },
     success: callback
@@ -33,11 +34,36 @@ function renderResult(result) {
 }
 
 function displayYtubeSearchData(data) {
-  const results = data.items.map((item, index) => renderResult(item));
-  $('.results').removeClass('hidden');
-  $('.result').html(results);
+
   $('#results').prop('hidden', false);
-  pageNav(data);
+
+  const results = data.items.map((item, index) => renderResult(item));
+  const totalResults = data.pageInfo.totalResults;
+
+  function showResultsCount() {
+    if (totalResults === 0) {
+      return `
+        No videos found. Try searching for something else.
+      `;
+    } else if (totalResults < 1000000 && totalResults > 0) {
+      return `
+        Your search yielded ${totalResults} videos. Grab some popcorn!
+      `;
+    } else {
+      return `Your search yielded over million videos. Got enough popcorn?`;
+    }
+  }
+  
+  $('.results').removeClass('hidden');
+  $('.showResultsCount').html(showResultsCount);
+  $('.result').html(results);
+  if (totalResults > 0) {
+    $('#h2-span').css('display', 'block').prop('hidden', false);;
+    pageNav(data);
+  } else {
+    $('#h2-span').css('display', 'none').prop('hidden', true);
+    $('#navigation').css('display', 'none').prop('hidden', true);
+  }
 }
 
 function watchSubmit() {

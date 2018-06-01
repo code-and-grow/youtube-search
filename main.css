@@ -81,14 +81,13 @@ h1 {
 }
 
 h2 {
-	font-size: 1.5rem;
+	font-size: 1.75rem;
 	margin-bottom: 20px;
 }
 
-h2 span {
-	display:  block;
+#h2-span {
   font-weight:  400;
-  font-size: 0.45rem;
+  font-size: 0.60rem;
 }
 
 h1, h2, legend {
@@ -141,6 +140,7 @@ fieldset {
 }
 
 legend {
+	background-color: #fff;
 	text-align: center;
 	text-transform: uppercase;
 	padding: 10px;
@@ -164,6 +164,13 @@ footer {
 	margin-right: auto;
 	margin-left: auto;
 	text-align: center;
+}
+
+.showResultsCount {
+	padding: 5px;
+	font-size: 0.9rem;
+	text-align: center;
+	margin-bottom: 20px;
 }
 
 .pagination {
@@ -277,6 +284,16 @@ p.channel-link {
     display: table;
 }
 
+@media screen and (min-width: 375px) {
+	legend, button {
+	  font-size: 1.1rem;
+	}
+}
+@media screen and (min-width: 400px) {
+	legend, button {
+	  font-size: 1.2rem;
+	}
+}
 @media screen and (min-width: 640px) {
 	header {
 		height: 200px;
@@ -288,10 +305,10 @@ p.channel-link {
 		padding-top: 80px;
 	}
 	h2 {
-		font-size: 1.8rem;
+		font-size: 2.2rem;
 	}
-	h2 span {
-    font-size: 0.6rem;
+	#h2-span {
+    font-size: 0.8rem;
 	}
 	input {
 		font-size: 1.2rem;
@@ -304,6 +321,11 @@ p.channel-link {
 	}
 	footer {
 	font-size: 0.60rem;
+	}
+	.showResultsCount {
+		padding: 15px;
+		font-size: 1.1rem;
+		margin-bottom: 30px;
 	}
 	.results {
 		margin-top: 50px;
