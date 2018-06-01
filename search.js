@@ -36,6 +36,7 @@ function displayYtubeSearchData(data) {
   const results = data.items.map((item, index) => renderResult(item));
   $('.results').removeClass('hidden');
   $('.result').html(results);
+  $('#results').prop('hidden', false);
   pageNav(data);
 }
 
@@ -68,7 +69,7 @@ function pageNav(data) {
   if (nextPage) {
     $('div#nextPage').replaceWith(`<a href="#results" id='js-nextPage' value='Next'>Next page ></a>`);
   }
-  $('#navigation').css('display', 'block');
+  $('#navigation').css('display', 'block').prop('hidden', false);
 }
 
 
