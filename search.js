@@ -13,8 +13,7 @@ function getDataFromYtube(searchTerm, pageToken, callback) {
       part: 'snippet',
       key: API_KEY,
       q: searchTerm,
-//      type: 'video',
-//      order: 'viewCount',
+      type: 'video',
       pageToken: pageToken
     },
     success: callback
