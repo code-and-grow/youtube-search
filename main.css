@@ -255,9 +255,12 @@ footer {
 	border-bottom: 2px solid red;
   margin-bottom: 20px;
   text-align: right;
-  font-size: 0.55rem;
   font-style: italic;
   font-weight: 600;
+}
+
+.channel-link a {
+	font-size: 0.55rem;
 }
 
 .channel-link:hover {
@@ -361,7 +364,7 @@ footer {
 	.result p {
 		font-size: 1.0rem;
 	}
-	.channel-link {
+	.channel-link a {
 		font-size: 0.85rem;
 	}
 	footer {
