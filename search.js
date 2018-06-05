@@ -1,9 +1,11 @@
+// Declaring needed variables
 const YT_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 const API_KEY = 'AIzaSyD7fadOdlYLbtAoWr8EqYzPpKMJS185u_c';
 let nextPage;
 let prevPage;
 let queryTerm;
 
+// Call Youtube API
 function getDataFromYtube(searchTerm, pageToken, callback) {
   const settings = {
     url: YT_SEARCH_URL,
@@ -21,10 +23,12 @@ function getDataFromYtube(searchTerm, pageToken, callback) {
   $.ajax(settings);
 }
 
+// Result container input
 function renderResult(result) {
   return `<a href="https://youtu.be/${result.id.videoId}" data-lity><h3 class="no-underline">${result.snippet.title}</h3><img src="${result.snippet.thumbnails.high.url}" alt="${result.snippet.description}"><p>${result.snippet.description}</p></a><p class="channel-link"><a href="https://www.youtube.com/channel/${result.snippet.channelId}" target="_blank">More from ${result.snippet.channelTitle}</a></p>`;
 }
 
+// Display search data
 function displayYtubeSearchData(data) {
 
   $('#results').prop('hidden', false);
@@ -53,7 +57,7 @@ function displayYtubeSearchData(data) {
     $('#navigation').css('display', 'none').prop('hidden', true);
   }
 }
-
+// Watch for user submit 
 function watchSubmit() {
   $('#js-search-form').submit(event => {
     event.preventDefault();
@@ -65,6 +69,7 @@ function watchSubmit() {
   });
 }
 
+// Watch for navigation
 function watchPageToken() {
   $('.pagination').on('click', '#js-nextPage', (event) => {
     getDataFromYtube(queryTerm, nextPage, displayYtubeSearchData);
@@ -74,6 +79,7 @@ function watchPageToken() {
   });
 }
 
+// Display navigation
 function pageNav(data) {
   nextPage = data.nextPageToken;
   prevPage = data.prevPageToken;
