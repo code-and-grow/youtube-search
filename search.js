@@ -11,9 +11,8 @@ function getDataFromYtube(searchTerm, pageToken, callback) {
       part: 'snippet',
       key: API_KEY,
       q: searchTerm,
-      regionCode: 'US',
       type: 'video',
-      order: 'rating',
+      order: 'viewCount',
       pageToken: pageToken
     },
     success: callback
@@ -23,14 +22,7 @@ function getDataFromYtube(searchTerm, pageToken, callback) {
 }
 
 function renderResult(result) {
-  return `
-    <a href="https://youtu.be/${result.id.videoId}" data-lity>
-      <h3 class="no-underline">${result.snippet.title}</h3>
-      <img src="${result.snippet.thumbnails.high.url}" alt="${result.snippet.description}">
-      <p>${result.snippet.description}</p>
-    </a>
-    <p class="channel-link"><a href="https://www.youtube.com/channel/${result.snippet.channelId}" target="_blank">>>> More from ${result.snippet.channelTitle}</a></p>
-  `;
+  return `<a href="https://youtu.be/${result.id.videoId}" data-lity><h3 class="no-underline">${result.snippet.title}</h3><img src="${result.snippet.thumbnails.high.url}" alt="${result.snippet.description}"><p>${result.snippet.description}</p></a><p class="channel-link"><a href="https://www.youtube.com/channel/${result.snippet.channelId}" target="_blank">More from ${result.snippet.channelTitle}</a></p>`;
 }
 
 function displayYtubeSearchData(data) {
@@ -42,13 +34,9 @@ function displayYtubeSearchData(data) {
 
   function showResultsCount() {
     if (totalResults === 0) {
-      return `
-        No videos found. Try searching for something else.
-      `;
-    } else if (totalResults < 1000000 && totalResults > 0) {
-      return `
-        Your search yielded ${totalResults} videos. Grab some popcorn!
-      `;
+      return `No videos found. Try searching for something else.`;
+    } else if (totalResults < 1000000 && totalResults >= 1) {
+      return `Your search yielded ${totalResults} videos. Grab some popcorn!`;
     } else {
       return `Your search yielded over million videos. Got enough popcorn?`;
     }
@@ -58,7 +46,7 @@ function displayYtubeSearchData(data) {
   $('.showResultsCount').html(showResultsCount);
   $('.result').html(results);
   if (totalResults > 0) {
-    $('#h2-span').css('display', 'block').prop('hidden', false);;
+    $('#h2-span').css('display', 'block').prop('hidden', false);
     pageNav(data);
   } else {
     $('#h2-span').css('display', 'none').prop('hidden', true);
@@ -78,10 +66,10 @@ function watchSubmit() {
 }
 
 function watchPageToken() {
-  $('.pagination').on('click', '#js-nextPage', (e) => {
+  $('.pagination').on('click', '#js-nextPage', (event) => {
     getDataFromYtube(queryTerm, nextPage, displayYtubeSearchData);
   });
-  $('.pagination').on('click', '#js-prevPage', (e) => {
+  $('.pagination').on('click', '#js-prevPage', (event) => {
     getDataFromYtube(queryTerm, prevPage, displayYtubeSearchData);
   });
 }
@@ -90,10 +78,10 @@ function pageNav(data) {
   nextPage = data.nextPageToken;
   prevPage = data.prevPageToken;
   if (prevPage) {
-    $('div#prevPage').replaceWith(`<a href="#results" id='js-prevPage' value='Previous'>< Previous page</a>`);
+    $('div#prevPage').replaceWith(`<a href="#results" id='js-prevPage' value='Previous'>Previous page</a>`);
   }
   if (nextPage) {
-    $('div#nextPage').replaceWith(`<a href="#results" id='js-nextPage' value='Next'>Next page ></a>`);
+    $('div#nextPage').replaceWith(`<a href="#results" id='js-nextPage' value='Next'>Next page</a>`);
   }
   $('#navigation').css('display', 'block').prop('hidden', false);
 }

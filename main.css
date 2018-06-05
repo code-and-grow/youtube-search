@@ -205,6 +205,14 @@ footer {
 	float: right;
 }
 
+#js-prevPage::before {
+	content: '< ';
+}
+
+#js-nextPage::after {
+	content: ' >';
+}
+
 .result {
 	margin-bottom: 30px;
   text-align: left;
@@ -219,7 +227,7 @@ footer {
 	color: red;
 }
 
-.result a:hover,
+.result a:hover
  {
 	text-decoration: underline;
 	color: red;
@@ -239,7 +247,11 @@ footer {
   padding: 5px 5px 10px;
 }
 
-p.channel-link {
+.result img {
+	width: 100%;
+}
+
+.channel-link {
 	border-bottom: 2px solid red;
   margin-bottom: 20px;
   text-align: right;
@@ -248,8 +260,13 @@ p.channel-link {
   font-weight: 600;
 }
 
-.result img {
-	width: 100%;
+.channel-link:hover {
+	text-decoration: underline;
+	color: red;
+}
+
+.channel-link a::before {
+	content: '> ';
 }
 
 .no-underline {
@@ -344,7 +361,7 @@ p.channel-link {
 	.result p {
 		font-size: 1.0rem;
 	}
-	p.channel-link {
+	.channel-link {
 		font-size: 0.85rem;
 	}
 	footer {
